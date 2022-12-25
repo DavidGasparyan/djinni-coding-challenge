@@ -1,4 +1,4 @@
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -20,7 +20,6 @@ const routes: Routes = [
     RouterModule,
   ],
   providers: [],
-
 })
 export class AppRoutingModule {}
 

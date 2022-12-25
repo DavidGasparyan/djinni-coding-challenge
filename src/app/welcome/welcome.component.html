@@ -1,5 +1,5 @@
 <div class="jumbotron bg-light py-5">
-	<h1 class="display-4">Welcome<!-- ADD YOUR NAME HERE -->!</h1>
+	<h1 class="display-4">Welcome David!</h1>
 	<div class="lead" [ngSwitch]="position">
 		<ng-template [ngSwitchCase]="'senior'"><ng-container *ngTemplateOutlet="introSenior"></ng-container></ng-template>
 		<ng-template ngSwitchDefault><ng-container *ngTemplateOutlet="introJunior"></ng-container></ng-template>
@@ -13,7 +13,7 @@
       <p>Add your name to the HTML of this page <code>&lt;h1&gt;Welcome!&lt;/h1&gt;</code>. This template can be found at: <code>/app/welcome/welcome.component.html</code>.</p>
       <p>Your name should render at the top of this page. ⬆
 		</li>
-		
+
 		<ng-container [ngSwitch]="position">
 			<ng-template [ngSwitchCase]="'senior'"><ng-container *ngTemplateOutlet="criteriaSenior"></ng-container></ng-template>
 			<ng-template ngSwitchDefault><ng-container *ngTemplateOutlet="criteriaJunior"></ng-container></ng-template>

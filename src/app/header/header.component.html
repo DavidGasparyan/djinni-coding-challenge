@@ -4,7 +4,10 @@
 
 		<ul class="nav navbar-nav flex-row">
 			<li class="nav-item">
-				<a class="nav-link pr-3" routerLink="/welcome">Home</a>
+				<a class="nav-link pr-3" [routerLink]="['/welcome']">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link pr-3" [routerLink]="['/todos']">ToDos</a>
 			</li>
 		</ul>
 	</div>

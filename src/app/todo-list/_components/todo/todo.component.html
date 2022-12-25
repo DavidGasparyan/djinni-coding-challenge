@@ -1,0 +1,5 @@
+<div class="todo" [ngClass]="this.isCompleted ? 'done': ''">
+  <button class="status" (click)="changeStatus()"></button>
+  <div> {{ this.data.name }} </div>
+  <button class="remove" (click)="remove()"></button>
+</div>
