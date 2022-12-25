@@ -1,12 +1,11 @@
 body {
   min-height: 100vh;
-  background-color: #b9c6d2;
-  background: linear-gradient(
-		180deg,
-		#b9c6d2 0%,
-		#d0dde9 10.45%,
-		#edf0f8 41.35%
-	)
+	background: #b9c6d2 linear-gradient(
+					180deg,
+					#b9c6d2 0%,
+					#d0dde9 10.45%,
+					#edf0f8 41.35%
+	);
 }
 
 
@@ -25,11 +24,11 @@ input {
 	border: 1px solid transparent;
 }
 
-input:focus-visible {
-	box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.1);
-	border: 1px solid #4ba0f0 !important;
-	outline: none;
-}
+//input:focus-visible {
+//	box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.1);
+//	border: 1px solid #4ba0f0 !important;
+//	outline: none;
+//}
 
 .newTodo input {
 	font-size: 28px;

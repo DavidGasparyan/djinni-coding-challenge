@@ -2,8 +2,8 @@
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-coding-challenge-knadgb)
 
-To start the project first run the json server
+To start the project first run the json server with dummy data to perform CRUD operations
 ```
-json-server --watch .\data.json
+npm run server
 ```
 

@@ -32,7 +32,7 @@ export class TodoService {
       })
   }
 
-  create(todo: IToDo)  {
+  create(todo: Partial<IToDo>)  {
     return this._http.post<IToDo>(this.API_URL, todo)
       .pipe(
         catchError((error: HttpErrorResponse) => {
@@ -41,7 +41,7 @@ export class TodoService {
         })
       )
       .subscribe((todo: IToDo) => {
-        this._todoList.unshift(todo);
+        this._todoList.push(todo);
         this._todoList$.next(this._todoList);
       })
   }
