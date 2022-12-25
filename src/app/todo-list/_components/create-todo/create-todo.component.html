@@ -1,7 +1,7 @@
-<form [formGroup]="todoForm" class="example-form" (ngSubmit)="create()" #formDirective="ngForm">
-  <mat-form-field class="example-full-width">
+<form [formGroup]="todoForm" class="form" (ngSubmit)="create()" #formDirective="ngForm">
+  <mat-form-field class="full-width">
     <mat-label>Name</mat-label>
-    <input type="text" id="inputElement" formControlName="name" matInput placeholder="ToDo Name" >
+    <input  aria-label="Add todo" type="text" id="inputElement" formControlName="name" matInput placeholder="+ tap to add a todo" >
     <mat-error *ngIf="name.hasError('minlength') && !name.hasError('required')">
       Please enter a valid name, minimum {{ name.getError('minlength')?.requiredLength }} characters
     </mat-error>

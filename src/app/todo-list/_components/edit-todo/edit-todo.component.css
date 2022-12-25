@@ -1,0 +1,11 @@
+.form {
+    min-width: 120px;
+    width: 100%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px;
+}

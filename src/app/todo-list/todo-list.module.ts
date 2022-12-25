@@ -8,6 +8,9 @@ import { MatInputModule } from "@angular/material/input";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {EditTodoComponent} from "./_components/edit-todo/edit-todo.component";
+import {OutsideClickDirective} from "../directives/outside-click.directive";
 
 
 
@@ -16,6 +19,8 @@ import { MatButtonModule } from "@angular/material/button";
     TodoListComponent,
     TodoComponent,
     CreateTodoComponent,
+    EditTodoComponent,
+    OutsideClickDirective,
   ],
   imports: [
     CommonModule,
@@ -25,6 +30,7 @@ import { MatButtonModule } from "@angular/material/button";
     MatFormFieldModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatIconModule,
   ],
   exports: [
     TodoListComponent

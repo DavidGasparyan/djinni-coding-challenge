@@ -1,0 +1,17 @@
+<div class="edit-todo">
+  <form [formGroup]="todoForm" class="form" (ngSubmit)="edit()" #formDirective="ngForm" appOutsideClick (outsideClick)="stopEditing()">
+    <div class="flex-container">
+      <mat-form-field >
+        <mat-label>Name</mat-label>
+        <input aria-label="Add todo" type="text" id="inputElement" formControlName="name" matInput>
+        <mat-error *ngIf="name.hasError('minlength') && !name.hasError('required')">
+          Please enter a valid name, minimum {{ name.getError('minlength')?.requiredLength }} characters
+        </mat-error>
+        <mat-error *ngIf="name.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!todoForm.valid">Update</button>
+    </div>
+  </form>`
+</div>

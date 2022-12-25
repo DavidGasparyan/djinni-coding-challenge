@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { IToDo } from "../../../interfaces/todo.interface";
 import { TodoService } from "../../../services/todo.service";
 
@@ -9,9 +9,10 @@ import { TodoService } from "../../../services/todo.service";
 })
 export class TodoComponent {
   @Input() data!: IToDo;
+  isEditing = false;
 
   constructor(
-    private readonly _todoService: TodoService,
+    readonly todoService: TodoService,
   ) {
   }
 
@@ -29,13 +30,21 @@ export class TodoComponent {
   }
 
   remove() {
-    this._todoService.delete(this.data);
+    this.todoService.delete(this.data);
   }
 
   update(todo: IToDo) {
     const id = todo.id;
     const data = todo;
 
-    this._todoService.update(id, data);
+    this.todoService.update(id, data);
+  }
+
+  startEditing() {
+   this.isEditing = true;
+  }
+
+  setEditingEvent(editingStatus: boolean) {
+    this.isEditing = editingStatus;
   }
 }

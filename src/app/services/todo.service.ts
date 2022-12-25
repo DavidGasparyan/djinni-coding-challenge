@@ -12,7 +12,6 @@ export class TodoService {
   private _todoList: IToDo[] = [];
   private _todoList$ = new BehaviorSubject<IToDo[]>(this._todoList);
 
-
   constructor(
     private readonly _http: HttpClient,
   ) {
@@ -46,7 +45,7 @@ export class TodoService {
       })
   }
 
-  update(id: any, data: Partial<IToDo>) {
+  update(id: number, data: Partial<IToDo>) {
     return this._http.put(`${this.API_URL}/${id}`, data, { headers: this._headers })
       .pipe(
         catchError((error: HttpErrorResponse) => {
@@ -55,7 +54,6 @@ export class TodoService {
         })
       )
       .subscribe((updatedTodo: IToDo) => {
-        console.log(updatedTodo)
         this._updateTodo(updatedTodo);
         this._todoList$.next(this._todoList);
       })
