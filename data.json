@@ -2,8 +2,7 @@
   "todos": [
     {
       "name": "todo 1123123",
-      "id": 1,
-      "isCompleted": false
+      "id": 1
     },
     {
       "name": "todo 222222",
@@ -28,6 +27,11 @@
       "name": "123123123123",
       "isCompleted": false,
       "id": 6
+    },
+    {
+      "name": "one more random todo",
+      "isCompleted": false,
+      "id": 7
     }
   ]
 }

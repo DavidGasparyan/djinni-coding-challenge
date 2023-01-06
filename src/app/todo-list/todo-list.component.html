@@ -1,7 +1,8 @@
 <app-create-todo></app-create-todo>
-
-<div *ngIf="todoList.length > 0; else emptyList">
-  <app-todo *ngFor="let todo of todoList" [data]="todo"></app-todo>
+<div class="todo-list">
+  <div *ngIf="todoList.length > 0; else emptyList">
+    <app-todo *ngFor="let todo of todoList" [data]="todo"></app-todo>
+  </div>
 </div>
 <ng-template #emptyList>
   <h3 class="text-center">There aren't any todos. Why don't you create one?</h3>
