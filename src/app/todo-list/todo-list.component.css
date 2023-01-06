@@ -1,5 +1,12 @@
+.todo-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .todo-list {
+    height: 600px;
     margin: 20px 0;
+    overflow: auto;
 }
 
 .text-center {
