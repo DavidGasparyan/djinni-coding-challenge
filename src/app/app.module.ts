@@ -1,17 +1,16 @@
-import { ErrorHandler, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 
-import { AppRoutingModule } from './app.routing.module';
+import {AppRoutingModule} from './app.routing.module';
 
-import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { HeaderComponent } from './header/header.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GlobalErrorHandler} from "./error-handlers/global-error-handler";
-import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { HttpErrorInterceptor } from "./interceptors/http-error.interceptor";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
+import {AppComponent} from './app.component';
+import {WelcomeComponent} from './welcome/welcome.component';
+import {HeaderComponent} from './header/header.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {GlobalErrorHandler} from "./error-handlers/global-error-handler";
+import {HttpClientModule} from "@angular/common/http";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {RouterModule} from "@angular/router";
 
 @NgModule({
@@ -29,17 +28,13 @@ import {RouterModule} from "@angular/router";
     WelcomeComponent,
     HeaderComponent,
   ],
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   providers: [
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler,
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptor,
-      multi: true
-    }
   ]
 })
-export class AppModule { }
+export class AppModule {
+}

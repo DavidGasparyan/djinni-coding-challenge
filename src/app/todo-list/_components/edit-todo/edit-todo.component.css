@@ -1,11 +1,19 @@
+.dialog {
+    /*height: 400px;*/
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+}
+
 .form {
     min-width: 120px;
     width: 100%;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 12px;
+.form-field {
+    width: 100%;
+}
+
+.mat-mdc-dialog-actions {
+    justify-content: center;
 }

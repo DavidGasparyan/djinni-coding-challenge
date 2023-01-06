@@ -1,17 +1,10 @@
 <div class="todo" [ngClass]="this.isCompleted ? 'done': ''">
   <button class="status" (click)="changeStatus()"></button>
   <div>
-    <p *ngIf="!this.isEditing; else editComponent"> {{ this.data.name }} </p>
+    <p> {{ this.data.name }} </p>
   </div>
   <div>
-    <mat-icon class="edit-icon" (click)="startEditing()">edit</mat-icon>
+    <mat-icon class="edit-icon" (click)="edit()">edit</mat-icon>
     <button class="remove" (click)="remove()"></button>
   </div>
 </div>
-
-<ng-template #editComponent>
-  <app-edit-todo
-      [data]="data"
-      (editingEvent)="setEditingEvent($event)"
-  ></app-edit-todo>
-</ng-template>

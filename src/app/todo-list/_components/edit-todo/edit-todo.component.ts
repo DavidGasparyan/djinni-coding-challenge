@@ -1,7 +1,8 @@
-import {Component, EventEmitter, Input, Output, Renderer2, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, Output, Renderer2, ViewChild, Inject} from '@angular/core';
 import {IToDo} from "../../../interfaces/todo.interface";
 import {TodoService} from "../../../services/todo.service";
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-todo',
@@ -9,7 +10,7 @@ import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/
   styleUrls: ['./edit-todo.component.css']
 })
 export class EditTodoComponent {
-  @Input() data: IToDo;
+  // @Input() data: IToDo;
   @Output() editingEvent = new EventEmitter<boolean>();
 
   todoForm: FormGroup;
@@ -20,7 +21,9 @@ export class EditTodoComponent {
     private readonly _fb: FormBuilder,
     private readonly _todoService: TodoService,
     private readonly _renderer: Renderer2,
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: IToDo,
+  ) {
+  }
 
   ngOnInit() {
     this.todoForm = this._fb.group({
@@ -30,7 +33,7 @@ export class EditTodoComponent {
     this.name.setValue(this.data.name);
   }
 
-  get name () {
+  get name() {
     return this.todoForm.get('name') as FormControl;
   }
 

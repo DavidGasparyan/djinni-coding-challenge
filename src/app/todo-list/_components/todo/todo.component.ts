@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { IToDo } from "../../../interfaces/todo.interface";
-import { TodoService } from "../../../services/todo.service";
+import {IToDo} from "../../../interfaces/todo.interface";
+import {TodoService} from "../../../services/todo.service";
+import {MatDialog} from "@angular/material/dialog";
+import {EditTodoComponent} from "../edit-todo/edit-todo.component";
 
 @Component({
   selector: 'app-todo',
@@ -9,10 +11,10 @@ import { TodoService } from "../../../services/todo.service";
 })
 export class TodoComponent {
   @Input() data!: IToDo;
-  isEditing = false;
 
   constructor(
     readonly todoService: TodoService,
+    public dialog: MatDialog,
   ) {
   }
 
@@ -40,11 +42,7 @@ export class TodoComponent {
     this.todoService.update(id, data);
   }
 
-  startEditing() {
-   this.isEditing = true;
-  }
-
-  setEditingEvent(editingStatus: boolean) {
-    this.isEditing = editingStatus;
+  edit() {
+    this.dialog.open(EditTodoComponent, {data: this.data});
   }
 }
