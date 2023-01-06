@@ -13,7 +13,10 @@ export class GlobalErrorHandler implements ErrorHandler {
   }
 
   private displayError(error: TypeError): void {
-    this._snackBar.open(error.message);
+    this._snackBar.open(error.message, 'Close',{
+      horizontalPosition: 'right',
+      verticalPosition: 'top'
+    });
   }
 
 }
